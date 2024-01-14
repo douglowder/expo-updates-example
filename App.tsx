@@ -1,6 +1,24 @@
 import { StatusBar } from "expo-status-bar";
+import * as Updates from "expo-updates";
 import { Text, TouchableHighlight, View } from "react-native";
 import colors from "tailwindcss/colors";
+
+console.log(Updates);
+
+async function handleFetchUpdate() {
+  try {
+    const update = await Updates.checkForUpdateAsync();
+
+    if (update.isAvailable) {
+      const result = await Updates.fetchUpdateAsync();
+      console.log(result);
+      await Updates.reloadAsync();
+    }
+  } catch (error) {
+    alert(`Error fetching latest Expo update: ${error}`);
+    console.log(error);
+  }
+}
 
 export default function App() {
   return (
@@ -9,12 +27,12 @@ export default function App() {
 
       <TouchableHighlight
         activeOpacity={1}
-        onPress={() => {}}
+        onPress={handleFetchUpdate}
         underlayColor={colors.violet[700]}
         className="w-full rounded bg-violet-600 px-4 py-3"
       >
         <Text className="text-base text-white font-semibold text-center">
-          Button
+          Fetch Updates
         </Text>
       </TouchableHighlight>
     </View>

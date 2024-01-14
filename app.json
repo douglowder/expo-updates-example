@@ -11,18 +11,41 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.wfljunior.expoupdates",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-updates",
+        {
+          "username": "wfl-junior"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "bb96563a-3cbf-43d7-8a9c-2b7b29357f5a"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/bb96563a-3cbf-43d7-8a9c-2b7b29357f5a"
     }
   }
 }
