@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { Text, TouchableHighlight, View } from "react-native";
+import colors from "tailwindcss/colors";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+    <View className="flex-1 items-center justify-center bg-white p-4">
       <StatusBar style="auto" />
+
+      <TouchableHighlight
+        activeOpacity={1}
+        onPress={() => {}}
+        underlayColor={colors.violet[700]}
+        className="w-full rounded bg-violet-600 px-4 py-3"
+      >
+        <Text className="text-base text-white font-semibold text-center">
+          Button
+        </Text>
+      </TouchableHighlight>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
