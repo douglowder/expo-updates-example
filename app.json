@@ -18,7 +18,8 @@
       "supportsTablet": true,
       "runtimeVersion": {
         "policy": "appVersion"
-      }
+      },
+      "bundleIdentifier": "com.wfljunior.expoupdates"
     },
     "android": {
       "adaptiveIcon": {
@@ -46,6 +47,7 @@
     },
     "updates": {
       "url": "https://u.expo.dev/bb96563a-3cbf-43d7-8a9c-2b7b29357f5a"
-    }
+    },
+    "owner": "wfl-junior"
   }
 }
